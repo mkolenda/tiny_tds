@@ -34,6 +34,7 @@ module TinyTds
     # rubocop:disable Metrics/CyclomaticComplexity
     # rubocop:disable Metrics/PerceivedComplexity
     def initialize(opts = {})
+      raise "TinyTds::Client initialize #{opts}"
       if opts[:dataserver].to_s.empty? && opts[:host].to_s.empty?
         raise ArgumentError, 'missing :host option if no :dataserver given'
       end
